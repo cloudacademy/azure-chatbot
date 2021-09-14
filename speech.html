@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Bot Chat</title>
+
+    <link href="https://cdn.botframework.com/botframework-webchat/latest/botchat.css" rel="stylesheet" />
+
+    <style>
+      .example {
+        float: left;
+        margin-right: 20px;
+        width: 300px;
+      }
+
+      .example > h2 {
+        font-family: 'Segoe UI';
+      }
+
+      #BotChatGoesHere {
+        border: 1px solid #333;
+        float: left;
+        height: 600px;
+        position: relative;
+        width: 460px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="example">
+      <h2>Web Chat with speech</h2>
+      <p>
+        This sample shows the various options for enabling speech recognition and speech synthesis in the Web Chat
+      </p>
+    </section>
+
+    <div id="BotChatGoesHere"></div>
+
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script>
+
+    <script>
+      const params = BotChat.queryParams(location.search);
+
+      const user = {
+        id: params['userid'] || 'userid',
+        name: params['username'] || 'username'
+      };
+
+      const bot = {
+        id: params['botid'] || 'botid',
+        name: params['botname'] || 'botname'
+      };
+
+      window.botchatDebug = params['debug'] && params['debug'] === 'true';
+
+      // Native browser speech (not supported by all browsers, no speech recognition priming support)
+      //
+      // Note that Chrome automatically blocks speech if the HTML file is loaded from disk. You can run a server locally
+      // or launch Chrome (close all the existing Chrome browsers) with the following option:
+      // chrome.exe --allow-file-access-from-files <sampleHtmlFile>
+      //
+     
+      const speechOptions = {
+         speechRecognizer: new BotChat.Speech.BrowserSpeechRecognizer(),
+         speechSynthesizer: new BotChat.Speech.BrowserSpeechSynthesizer()
+      };
+
+      BotChat.App({
+        bot: bot,
+        locale: params['locale'],
+        resize: 'detect',
+        // sendTyping: true,    // defaults to false. set to true to send 'typing' activities to bot (and other users) when user is typing
+        speechOptions: speechOptions,
+        user: user,
+
+        directLine: {
+          domain: params['domain'],
+          secret: params['s'],
+          token: params['t'],
+          webSocket: params['webSocket'] && params['webSocket'] === 'true' // defaults to true
+        }
+      }, document.getElementById('BotChatGoesHere'));
+    </script>
+  </body>
+</html>
