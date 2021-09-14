@@ -14,5 +14,5 @@ https://docs.microsoft.com/azure/bot-service/bot-service-resources-bot-framework
 ### Conclusion
 [Azure QnA Maker documentation](https://docs.microsoft.com/azure/cognitive-services/QnAMaker/index)  
 [Azure Bot Service documentation](https://docs.microsoft.com/azure/bot-service)  
-[Microsoft Speech API documentation](https://docs.microsoft.com/azure/cognitive-services/speech-service/)  
+[Azure Speech Service documentation](https://docs.microsoft.com/azure/cognitive-services/speech-service/)  
 support@cloudacademy.com
