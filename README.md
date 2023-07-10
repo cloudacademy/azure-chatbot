@@ -1,18 +1,14 @@
 # Building a Chatbot on Azure
 This file contains URLs from the demos in Cloud Academy's _Building a Chatbot on Azure_ course.  
 
-### Introduction
-[Azure Free Trial](https://azure.microsoft.com/free)  
+### Question Answering
+[Language Studio](https://language.cognitive.azure.com/)  
 
-### QnA Maker
-[QnA Maker Portal](https://qnamaker.ai)  
+FAQ:  
+https://learn.microsoft.com/en-us/azure/bot-service/bot-service-resources-bot-framework-faq  
 
-FAQs:  
-https://docs.microsoft.com/azure/cognitive-services/QnAMaker/troubleshooting  
-https://docs.microsoft.com/azure/bot-service/bot-service-resources-bot-framework-faq  
-
-### Conclusion
-[Azure QnA Maker documentation](https://docs.microsoft.com/azure/cognitive-services/QnAMaker/index)  
-[Azure Bot Service documentation](https://docs.microsoft.com/azure/bot-service)  
-[Azure Speech Service documentation](https://docs.microsoft.com/azure/cognitive-services/speech-service/)  
+### Documentation links
+[Azure Question Answering documentation](https://learn.microsoft.com/azure/cognitive-services/language-service/question-answering/overview)  
+[Azure Bot Service documentation](https://learn.microsoft.com/azure/bot-service)  
+[Azure Speech Service documentation](https://learn.microsoft.com/azure/cognitive-services/speech-service/)  
 support@cloudacademy.com
